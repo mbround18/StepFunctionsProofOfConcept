@@ -3,3 +3,14 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+.idea/
+.vs/
+StepFunctionsProofOfConcept.sln.DotSettings.user
+build/
+.cache/
+.parcel-cache/
+node_modules/
+*.log
+build/
+dist/
+

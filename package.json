@@ -1,7 +1,30 @@
 {
-  "name": "StepFunctionsProofOfConcept",
+  "name": "step-functions-proof-of-concept",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Michael Bruno <no-reply@bruno.fyi>",
-  "license": "MIT"
+  "author": "Michael Bruno <12646562+mbround18@users.noreply.github.com>",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "parcel serve  ./client/index.html",
+    "build": "NODE_ENV=production parcel"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.2",
+    "dart-sass": "^1.25.0",
+    "esbuild": "^0.4.8",
+    "parcel": "latest",
+    "sass": "^1.26.8",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
+  }
 }

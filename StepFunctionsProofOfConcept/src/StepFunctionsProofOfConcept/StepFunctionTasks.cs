@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-
 using Amazon.Lambda.Core;
 
 
@@ -26,7 +25,7 @@ namespace StepFunctionsProofOfConcept
         {
             state.Message = "Hello";
 
-            if(!string.IsNullOrEmpty(state.Name))
+            if (!string.IsNullOrEmpty(state.Name))
             {
                 state.Message += " " + state.Name;
             }

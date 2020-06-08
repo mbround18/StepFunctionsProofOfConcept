@@ -3,10 +3,27 @@
 version: '2'
 
 vars:
-  GREETING: Hello, World!
+  GREETING: Hello, This is a step function proof of concept repository.!
 
 tasks:
   default:
     cmds:
       - echo "{{.GREETING}}"
     silent: true
+
+  build:
+    dir: StepFunctionsProofOfConcept/src/StepFunctionsProofOfConcept/
+    cmds:
+      - dotnet clean --output ../../../build
+      - dotnet publish --output ../../../build
+
+  install: 
+    cmds: 
+      - dotnet restore
+      - pip3 install -r requirements.txt
+      - yarn install
+        
+  test: 
+    depts: [install] 
+    cmds:
+      - dotnet test
