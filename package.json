@@ -1,0 +1,7 @@
+{
+  "name": "StepFunctionsProofOfConcept",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Michael Bruno <no-reply@bruno.fyi>",
+  "license": "MIT"
+}
