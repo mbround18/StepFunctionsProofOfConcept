@@ -6,6 +6,7 @@
 </template>
 
 <script lang="ts">
+    import Axios from "axios";
     export default {
         name: "App",
         data() {
@@ -14,11 +15,8 @@
           };
         },
         methods: {
-            delivery() {
-                const derp: any = {
-                    apple: "Nested message with question mark"
-                };
-                console.log(derp?.apple);
+            post() {
+                Axios.post('')
             }
         }
     }

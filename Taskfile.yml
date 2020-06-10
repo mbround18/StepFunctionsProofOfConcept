@@ -2,13 +2,10 @@
 
 version: '2'
 
-vars:
-  GREETING: Hello, This is a step function proof of concept repository.!
-
 tasks:
   default:
     cmds:
-      - echo "{{.GREETING}}"
+      - python scripts/venv_check.py
     silent: true
 
   build:
@@ -16,14 +13,16 @@ tasks:
     cmds:
       - dotnet clean --output ../../../build
       - dotnet publish --output ../../../build
+      - dotnet lambda package -o ../../../release/latest.zip
 
-  install: 
+  install:
+    depts: [default]
     cmds: 
       - dotnet restore
-      - pip3 install -r requirements.txt
+      - pip3 install -r requirements.txt 
       - yarn install
         
   test: 
-    depts: [install] 
+    depts: [default, install] 
     cmds:
       - dotnet test

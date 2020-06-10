@@ -29,6 +29,12 @@ I manually installed Task because I use Chocolatey for package management and th
 ### Prerequisite 
  
  - Install task executable
+ - Install python3, nodejs, yarn, terraform
+ - install virtualenv `pip install virtualenv`
+ - run `virtualenv venv`
+ - Activate the venv with:
+    - Windows: `venv\Scripts\activate`
+    - Mac/Linux: `source venv/bin/activate` 
 
 ### Installation
  
