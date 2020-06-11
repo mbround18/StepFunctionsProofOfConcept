@@ -2,10 +2,13 @@
 
 version: '2'
 
+vars:
+  GREETING: Hello, This is a step function proof of concept repository.!
+
 tasks:
   default:
     cmds:
-      - python scripts/venv_check.py
+      - echo "{{.GREETING}}"
     silent: true
 
   build:
@@ -13,16 +16,21 @@ tasks:
     cmds:
       - dotnet clean --output ../../../build
       - dotnet publish --output ../../../build
-      - dotnet lambda package -o ../../../release/latest.zip
 
-  install:
-    depts: [default]
+  install: 
     cmds: 
       - dotnet restore
-      - pip3 install -r requirements.txt 
+      - pip3 install --user virtualenv 
+      - pip3 install -r requirements.txt --user
       - yarn install
         
   test: 
-    depts: [default, install] 
+    depts: [install] 
     cmds:
       - dotnet test
+
+  deploy: 
+    dir: terraform
+    depts: [build]
+    cmds: 
+      - terraform apply

@@ -13,6 +13,7 @@ node_modules/
 *.log
 build/
 dist/
+obj/Release/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,jetbrains+all,visualstudio,visualstudiocode,dotnetcore,node

@@ -3,20 +3,20 @@
 }
 
 provider "aws" {
-  access_key                  = "mock_access_key"
+  # access_key                  = "mock_access_key"
   region                      = "us-west-2"
-  s3_force_path_style         = true
-  secret_key                  = "mock_secret_key"
-  skip_credentials_validation = true
-  skip_metadata_api_check     = true
-  skip_requesting_account_id  = true
+  # s3_force_path_style         = true
+  # secret_key                  = "mock_secret_key"
+  # skip_credentials_validation = true
+  # skip_metadata_api_check     = true
+  # skip_requesting_account_id  = true
 
-  endpoints {
-    s3            = "http://localhost:4572"
-    lambda        = "http://localhost:4574"
-    iam           = "http://localhost:4593"
-    stepfunctions = "http://localhost:4585"
-  }
+  # endpoints {
+  #  s3            = "http://localhost:4572"
+  #  lambda        = "http://localhost:4574"
+  #  iam           = "http://localhost:4593"
+  #  stepfunctions = "http://localhost:4585"
+  # }
 }
 
 
@@ -134,7 +134,7 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
     },
     "Salutations": {
       "Type": "Task",
-      "Resource": "${aws_lambda_function.greeting_task.arn}",
+      "Resource": "${aws_lambda_function.salutations_task.arn}",
       "End": true
     }
   }
